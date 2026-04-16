@@ -1,0 +1,64 @@
+{
+  "name": "@dandre3000/environment",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "DeAundre Payne",
+    "email": "apps.fondling796@passinbox.com",
+    "url": "https://github.com/dandre3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandre3000/environment.git"
+  },
+  "description": "Check if code is running on the main thread or a worker of a browser, node, bun or deno instance.",
+  "keywords": [
+    "isMainThread",
+    "thread",
+    "Worker",
+    "worker_threads",
+    "browser",
+    "node",
+    "bun",
+    "deno",
+    "runtime",
+    "environment"
+  ],
+  "files": [
+    "./build"
+  ],
+  "exports": {
+    "types": "./build/index.d.ts",
+    "browser": {
+      "import": "./build/browser.js"
+    },
+    "bun": {
+      "import": "./build/bun.js"
+    },
+    "deno": {
+      "import": "./build/deno.js"
+    },
+    "node": {
+      "import": "./build/node.js"
+    },
+    "default": {
+      "import": "./build/browser.js"
+    }
+  },
+  "scripts": {
+    "test": "node --test tests/node.test.js && bun test tests/bun.test.js && deno test -A tests/deno.test.js",
+    "prepack": "bun run test"
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "deno": ">=1.0.0",
+    "node": ">=10.5.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.1",
+    "@types/deno": "^2.5.0",
+    "@types/node": "^22.19.0",
+    "expect": "^29.7.0"
+  },
+  "type": "module"
+}
