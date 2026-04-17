@@ -1,6 +1,5 @@
 /node_modules/
-/build/
-ignore/
+/ignore/
 server.ts
 index.html
 package-lock.json
