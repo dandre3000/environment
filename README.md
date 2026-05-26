@@ -38,11 +38,9 @@ if (isMainThread) {
 Alias for process.exit or globalThis.close.
 
 #### isMainThread: boolean
-
 True if the current global scope is the main thread or false otherwise.
 
 #### runtime: 'bun' | 'browser' | 'deno' | 'node'
-
 The name of the current runtme.
 
 ## License
