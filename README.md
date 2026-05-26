@@ -34,13 +34,16 @@ if (isMainThread) {
 
 ## Exports
 
-#### runtime: 'bun' | 'browser' | 'deno' | 'node'
-
-The name of the current runtme.
+#### exit: (code?: number | string | null) => never
+Alias for process.exit or globalThis.close.
 
 #### isMainThread: boolean
 
 True if the current global scope is the main thread or false otherwise.
+
+#### runtime: 'bun' | 'browser' | 'deno' | 'node'
+
+The name of the current runtme.
 
 ## License
 
