@@ -1,3 +1,3 @@
-export { close as exit }
+export const exit = globalThis.close
 export const isMainThread = typeof WorkerGlobalScope !== 'function' || !(self instanceof WorkerGlobalScope)
 export const runtime = 'browser'
