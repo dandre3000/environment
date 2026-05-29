@@ -1,6 +1,6 @@
 {
   "name": "@dandre3000/environment",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "author": {
     "name": "DeAundre Payne",
@@ -27,27 +27,30 @@
   "files": [
     "./build"
   ],
+  "types": "./build/index.d.ts",
   "exports": {
-    "types": "./build/index.d.ts",
-    "browser": {
-      "import": "./build/browser.js"
+    ".": {
+      "browser": {
+        "import": "./build/browser.js"
+      },
+      "bun": {
+        "import": "./build/bun.js"
+      },
+      "deno": {
+        "import": "./build/deno.js"
+      },
+      "node": {
+        "import": "./build/node.js"
+      },
+      "default": {
+        "import": "./build/browser.js"
+      }
     },
-    "bun": {
-      "import": "./build/bun.js"
-    },
-    "deno": {
-      "import": "./build/deno.js"
-    },
-    "node": {
-      "import": "./build/node.js"
-    },
-    "default": {
-      "import": "./build/browser.js"
-    }
-  },
-  "scripts": {
-    "test": "node --test tests/node.test.js && bun test tests/bun.test.js && deno test -A tests/deno.test.js",
-    "prepack": "bun run test"
+    "./browser.js": "./build/browser.js",
+    "./bun.js": "./build/bun.js",
+    "./deno.js": "./build/deno.js",
+    "./node.js": "./build/node.js",
+    "./package.json": "./package.json"
   },
   "engines": {
     "bun": ">=1.0.0",
@@ -59,6 +62,10 @@
     "@types/deno": "^2.5.0",
     "@types/node": "^22.19.0",
     "expect": "^29.7.0"
+  },
+  "scripts": {
+    "test": "node --test tests/node.test.js && bun test tests/bun.test.js && deno test -A tests/deno.test.js",
+    "prepack": "bun run test"
   },
   "type": "module"
 }
