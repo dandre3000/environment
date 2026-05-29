@@ -1,6 +1,6 @@
 {
   "name": "@dandre3000/environment",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "author": {
     "name": "DeAundre Payne",
@@ -31,25 +31,42 @@
   "exports": {
     ".": {
       "browser": {
+        "types": "./build/index.d.ts",
         "import": "./build/browser.js"
       },
       "bun": {
+        "types": "./build/index.d.ts",
         "import": "./build/bun.js"
       },
       "deno": {
+        "types": "./build/index.d.ts",
         "import": "./build/deno.js"
       },
       "node": {
+        "types": "./build/index.d.ts",
         "import": "./build/node.js"
       },
       "default": {
+        "types": "./build/index.d.ts",
         "import": "./build/browser.js"
       }
     },
-    "./browser.js": "./build/browser.js",
-    "./bun.js": "./build/bun.js",
-    "./deno.js": "./build/deno.js",
-    "./node.js": "./build/node.js",
+    "./browser.js": {
+      "types": "./build/index.d.ts",
+      "import": "./build/browser.js"
+    },
+    "./bun.js": {
+      "types": "./build/index.d.ts",
+      "import": "./build/bun.js"
+    },
+    "./deno.js": {
+      "types": "./build/index.d.ts",
+      "import": "./build/deno.js"
+    },
+    "./node.js": {
+      "types": "./build/index.d.ts",
+      "import": "./build/node.js"
+    },
     "./package.json": "./package.json"
   },
   "engines": {
